@@ -25,6 +25,6 @@ function addZero(i) {
   let h = addZero(d.getUTCHours());
   let m = addZero(d.getUTCMinutes());
   let s = addZero(d.getUTCSeconds());
-  let dateToday = h + ":" + m + ":" + s;
+  let timeToday = h + ":" + m + ":" + s;
   
-datePlacer.innerHTML = 'The date is ' + dateToday;
+datePlacer.innerHTML = 'The time is ' + timeToday;
