@@ -16,7 +16,7 @@ dayPlacer.innerHTML = 'Today is ' + DaysOfWeeks[todayDay];
 
 let datePlacer = document.getElementById("time");
 
-function addZero(i) {
+/**function addZero(i) {
     if (i < 10) {i = "0" + i}
     return i;
   }
@@ -25,6 +25,7 @@ function addZero(i) {
   let h = addZero(d.getUTCHours());
   let m = addZero(d.getUTCMinutes());
   let s = addZero(d.getUTCSeconds());
-  let timeToday = h + ":" + m + ":" + s;
-  
-datePlacer.innerHTML = 'The time is ' + timeToday;
+  let timeToday = h + ":" + m + ":" + s;**/
+timeToday = todayDate.getUTCMilliseconds;
+datePlacer.innerHTML = 'The time is ' + timeToday
+
