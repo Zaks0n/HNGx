@@ -17,7 +17,7 @@ dayPlacer.innerHTML = 'Today is ' + DaysOfWeeks[todayDay];
 let datePlacer = document.getElementById("time");
 
 
-timeToday = todayDate.getUTCMilliseconds();
+timeToday = todayDate.getTime();
   
 datePlacer.innerHTML = 'The time is ' + timeToday;
 
