@@ -24,7 +24,7 @@ function App() {
 
   const renderMovies = () => (
       movies.map(movie => (
-          <MovieCard
+          <MovieCard data-testid='movie-card'
             key={movie.id}
             movie={movie}
           />
