@@ -7,11 +7,14 @@ function App() {
 
   const API_URL = "https://api.themoviedb.org/3"
   const [movies, setMovies] = useState([])
+  const [searchKey, setSearchKey] = useState("")
 
-  const fetchMovies = async () => {
-      const {data: {results}} = await axios.get(`${API_URL}/discover/movie`, {
+  const fetchMovies = async (searchKey) => {
+    const type = searchKey ? "search" : "discover"
+      const {data: {results}} = await axios.get(`${API_URL}/${type}/movie`, {
         params: {
-          api_key: process.env.REACT_APP_MOVIE_API_KEY
+          api_key: process.env.REACT_APP_MOVIE_API_KEY,
+          query: searchKey
         }
       })
 
@@ -32,8 +35,21 @@ function App() {
       ))
   )
 
+  const searchMovies = (e) => {
+      e.preventDefault()
+      fetchMovies(searchKey)
+  }
+
   return (
     <div className="App">
+      <header>
+          <h1>Movie Box App</h1>
+
+          <form onSubmit={searchMovies}>
+              <input type="text" onChange={(e) => setSearchKey(e.target.value)}/>
+              <button type={"submit"}>Search</button>
+          </form>
+      </header>
       <h1>Hello HNGx</h1>
       <div className='container'>
             {renderMovies()}
