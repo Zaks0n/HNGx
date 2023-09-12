@@ -1,14 +1,39 @@
-.container {
+.header {
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.max-center{
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  padding: 15px;
 
   display: grid;
   gap: 15px;
-
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .movie-cover{
   width: 100%;
+}
+
+.movie-placeholder {
+  background-color: black;
+  height: 350px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

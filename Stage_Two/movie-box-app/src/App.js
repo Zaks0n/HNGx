@@ -42,16 +42,19 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+      <header className={'header'}>
+        <div className={"header-content max-center"}>
           <h1>Movie Box App</h1>
 
-          <form onSubmit={searchMovies}>
-              <input type="text" onChange={(e) => setSearchKey(e.target.value)}/>
-              <button type={"submit"}>Search</button>
-          </form>
+        <form onSubmit={searchMovies}>
+            <input type="text" onChange={(e) => setSearchKey(e.target.value)}/>
+            <button type={"submit"}>Search</button>
+        </form>
+        </div>
+          
       </header>
       <h1>Hello HNGx</h1>
-      <div className='container'>
+      <div className='container max-center'>
             {renderMovies()}
       </div>
     </div>
