@@ -32,6 +32,7 @@ function App() {
           <MovieCard data-testid='movie-card'
             key={movie.id}
             movie={movie}
+            selectMovie={setSelectedMovie}
           />
               
       ))
