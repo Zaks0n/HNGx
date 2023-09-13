@@ -4,9 +4,10 @@ import './App.css';
 import MovieCard from './components/MovieCard';
 
 function App() {
-
+  const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280/"
   const API_URL = "https://api.themoviedb.org/3"
   const [movies, setMovies] = useState([])
+  const [selectedMovie, setSelectedMovie] = useState({})
   const [searchKey, setSearchKey] = useState("")
 
   const fetchMovies = async (searchKey) => {
@@ -18,7 +19,8 @@ function App() {
         }
       })
 
-     setMovies(results)
+      setSelectedMovie(results[0])
+      setMovies(results)
   }
 
   useEffect( () => {
@@ -44,16 +46,22 @@ function App() {
     <div className="App">
       <header className={'header'}>
         <div className={"header-content max-center"}>
-          <h1>Movie Box App</h1>
-
+          <span>Movie Box App</span>
         <form onSubmit={searchMovies}>
             <input type="text" onChange={(e) => setSearchKey(e.target.value)}/>
             <button type={"submit"}>Search</button>
         </form>
         </div>
-          
       </header>
-      <h1>Hello HNGx</h1>
+
+        <div className="hero" style={{backgroundImage: `url('${IMAGE_PATH}${selectedMovie.backdrop_path}')`}}>
+            <div className='hero-content max-center'>
+                <button className={"button"}>Play Trailer</button>
+                <h1 className={"hero-title"}>{selectedMovie.title}</h1>
+                {selectedMovie.overview ? <p className={"hero-overview"}>{selectedMovie.overview}</p> : null}
+            </div> 
+        </div>
+
       <div className='container max-center'>
             {renderMovies()}
       </div>

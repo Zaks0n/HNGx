@@ -37,3 +37,32 @@
   justify-content: center;
   align-items: center;
 }
+
+.hero {
+  min-height: 600px;
+  min-width: 1440px;
+  background-position: top center;
+  background-size: cover;
+  display: flex;
+  align-items:flex-end;
+}
+
+.hero-content{
+    max-width: 70%;
+    padding-bottom: 60px;
+    color: white;
+}
+
+.hero-title {
+  font-size: 72px;
+  margin: 0;
+}
+
+.button {
+  background-color: red;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
