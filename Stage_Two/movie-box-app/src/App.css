@@ -66,3 +66,19 @@
   padding: 10px 15px;
   cursor: pointer;
 }
+
+
+.button-close {
+    position: relative;
+    z-index: 2;
+    bottom: 10px;
+    left: 10px;
+}
+
+.youtube-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
