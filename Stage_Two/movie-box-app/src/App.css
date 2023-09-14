@@ -30,7 +30,7 @@
 }
 
 .movie-placeholder {
-  background-color: black;
+  background-color: #111;
   height: 350px;
   color: white;
   display: flex;
